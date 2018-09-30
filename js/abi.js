@@ -68,11 +68,11 @@ var abi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "boss",
+        "name": "fees",
         "outputs": [
             {
                 "name": "",
-                "type": "address"
+                "type": "uint256"
             }
         ],
         "payable": false,
@@ -82,7 +82,7 @@ var abi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "fees",
+        "name": "getFess",
         "outputs": [
             {
                 "name": "",
@@ -167,63 +167,7 @@ var abi = [
         "payable": false,
         "stateMutability": "view",
         "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "loser",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "loserbid",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "top",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "topbid",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
     }
 ]
 
-var address ='0xeaBE747d83Aa6254De162c6C608775344FaB3AB2'
+var address ='0xcb36a7012df07ac17129be4dc2f93972d7f871e6'
