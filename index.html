@@ -32,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <section class="register">
 	<div class="header">
 		<div class="logo">
-			<a href="#">Just An Ethereum Advertisement(Rinkeby MODE)</a>
+			<a href="#">Just An Ethereum Advertisement</a>
 		</div>
 	<div class="social">
 			<!--<li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -200,7 +200,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		} else {
 			// 处理用户没安装的情况， 比如显示一个消息
 			console.log('none metamask start the web');
-			web3 = new Web3( new Web3.providers.WebsocketProvider("wss://rinkeby.infura.io/ws"));
+			web3 = new Web3( new Web3.providers.WebsocketProvider("wss://mainnet.infura.io/ws"));
 			$(".m1").hide();
 
 			// 告诉他们要安装 MetaMask 来使用我们的应用
