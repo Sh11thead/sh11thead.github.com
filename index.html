@@ -194,6 +194,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		if (typeof web3 !== 'undefined') {
 			// 使用 Mist/MetaMask 的提供者
 			web3 = new Web3(web3.currentProvider);
+			try {
+				// Request account access if needed
+				await ethereum.enable();
+			} catch (error) {
+				// User denied account access...
+			}
 			console.log(web3.eth.accounts)
 			console.log(' metamask start the web');
 			$(".nm1").hide();
