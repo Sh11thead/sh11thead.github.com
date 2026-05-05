@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JulianCapital</title>
+    <meta
+      name="description"
+      content="JulianCapital is a thesis-driven venture firm focused on crypto protocols, products, and frontier dapps."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="pixel-canvas" aria-hidden="true"></canvas>
+    <div id="scanlines" aria-hidden="true"></div>
+
+    <div id="app">
+      <!-- ── Navigation ───────────────────────────────────────── -->
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="JulianCapital home">
+          <span class="brand-name">JULIAN<span class="accent-text">CAPITAL</span></span>
+        </a>
+        <nav class="menu" aria-label="main navigation">
+          <a href="#about"><span class="nav-num">01</span><span class="nav-label">ABOUT</span></a>
+          <a href="#portfolio"><span class="nav-num">02</span><span class="nav-label">PORTFOLIO</span></a>
+          <a href="#dapps"><span class="nav-num">03</span><span class="nav-label">DAPPS</span></a>
+          <a href="#contact"><span class="nav-num">04</span><span class="nav-label">CONTACT</span></a>
+        </nav>
+      </header>
+
+      <main id="home">
+        <!-- ── Hero ─────────────────────────────────────────────── -->
+        <section class="hero">
+          <div class="hero-content reveal">
+            <p class="kicker">// SOLO OPERATOR &middot; FAMILY OFFICE</p>
+            <h1>FREEDOM<br />IS AN<br /><span class="accent-text">ONCHAIN</span><br />BET.</h1>
+            <p class="hero-meta">
+              One operator. One family. Compounding conviction into sovereign wealth &mdash;
+              with no intermediaries, no disclaimers, and no exit.
+            </p>
+            <a href="#about" class="pixel-btn">EXPLORE &#x2192;</a>
+          </div>
+        </section>
+
+        <!-- ── 01 About ──────────────────────────────────────────── -->
+        <section id="about" class="section reveal">
+          <div class="sec-label">
+            <span class="sec-num">01</span>
+            <span class="sec-name">ABOUT</span>
+          </div>
+          <div class="sec-body">
+            <p>
+              JulianCapital is not a fund. It&rsquo;s a declaration. A single-operator family
+              office built on one irreversible thesis &mdash; that the next generation of
+              real, lasting, sovereign wealth only makes sense onchain.
+            </p>
+            <p>
+              No limited partners. No management fees. No quarterly theatrics. Every
+              position is a long-horizon act of conviction: that decentralized
+              infrastructure is the permanent substrate of human freedom. We invest
+              for the family. We build for permanence.
+            </p>
+          </div>
+        </section>
+
+        <!-- ── 02 Portfolio ──────────────────────────────────────── -->
+        <section id="portfolio" class="section reveal">
+          <div class="sec-label">
+            <span class="sec-num">02</span>
+            <span class="sec-name">PORTFOLIO</span>
+          </div>
+          <div class="sec-body">
+            <div class="card-list">
+              <article class="card">
+                <h2>STABLES &amp; RWA</h2>
+                <p>The dollar never sleeps and neither does yield.</p>
+                <p>Stablecoins and real-world assets are the beachhead &mdash;<br />the moment sovereign capital admits the chain is the only ledger that doesn&rsquo;t lie.</p>
+              </article>
+              <article class="card">
+                <h2>DEFI INVESTMENTS</h2>
+                <p>Banks charge rent on your own money.<br />DeFi charges nothing and asks nothing in return but a wallet.</p>
+                <p>We back protocols that make the old rails look embarrassing &mdash;<br />and then obsolete.</p>
+              </article>
+              <article class="card">
+                <h2>BTC &amp; ETH &mdash; DAY ONE</h2>
+                <p>Not a trade. Not a thesis. A permanent position.</p>
+                <p>Bitcoin is hard money in a world drowning in printed promises.<br />Ethereum is the settlement layer of everything that comes next.</p>
+                <p>We don&rsquo;t time the exit &mdash; there is no exit.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── 03 Dapps ──────────────────────────────────────────── -->
+        <section id="dapps" class="section reveal">
+          <div class="sec-label">
+            <span class="sec-num">03</span>
+            <span class="sec-name">DAPPS</span>
+          </div>
+          <div class="sec-body">
+            <div class="card-list">
+              <article class="card">
+                <h2>ATLAS</h2>
+                <p>Real-time intelligence for wallets, flows, and market regimes.</p>
+              </article>
+              <article class="card">
+                <h2>NEST</h2>
+                <p>Structured non-custodial yield vaults and treasury orchestration.</p>
+              </article>
+              <article class="card">
+                <h2>ORBIT</h2>
+                <p>Portable reputation and identity across protocols and communities.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ── 04 Footer / Contact ───────────────────────────────── -->
+      <footer id="contact" class="foot reveal">
+        <div class="sec-label">
+          <span class="sec-num">04</span>
+          <span class="sec-name">CONTACT</span>
+        </div>
+        <div class="foot-body">
+          <a href="mailto:hello@juliancapital.xyz" class="foot-email">hello@juliancapital.xyz</a>
+          <span class="foot-copy">&copy; JULIANCAPITAL 2026</span>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

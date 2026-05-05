@@ -1,0 +1,405 @@
+/* =================================================================
+   JULIAN CAPITAL — PIXEL THEME  (Dragonfly-inspired)
+   ================================================================= */
+
+:root {
+  --bg:     #050507;
+  --bg-alt: #08080d;
+  --text:   #e8e8e0;
+  --accent: #ff4d00;
+  --muted:  #4a4a54;
+  --line:   #18181f;
+}
+
+/* --- Reset ---------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Mono', 'Courier New', monospace;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Scanlines ------------------------------------------------ */
+#scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 4, 0.07) 2px,
+    rgba(0, 0, 4, 0.07) 4px
+  );
+}
+
+/* --- Navigation ---------------------------------------------- */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 400;
+  height: 58px;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 5, 7, 0.97);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  text-decoration: none;
+  border-right: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.menu {
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 22px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  border-left: 1px solid var(--line);
+  transition: color 180ms, background 180ms;
+}
+
+.menu a:hover {
+  color: var(--accent);
+  background: rgba(255, 77, 0, 0.04);
+}
+
+.nav-num {
+  color: var(--accent);
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+/* --- Pixel Canvas (fixed background) ------------------------- */
+#pixel-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+}
+
+/* --- Hero ----------------------------------------------------- */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 58px; /* clear fixed topbar */
+  border-bottom: 1px solid var(--line);
+  /* left-side gradient so text stays readable; right stays transparent for logo */
+  background: linear-gradient(
+    105deg,
+    rgba(5, 5, 7, 0.80) 0%,
+    rgba(5, 5, 7, 0.35) 42%,
+    transparent 65%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 64px 80px;
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: clamp(54px, 9.8vw, 178px);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.hero-meta {
+  margin-top: 36px;
+  max-width: 380px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.pixel-btn {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  transition: border-color 180ms, color 180ms, background 180ms;
+}
+
+.pixel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 77, 0, 0.05);
+}
+
+/* Sections and footer sit above the fixed canvas */
+.section,
+.foot {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* --- Sections ------------------------------------------------ */
+.section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-bottom: 1px solid var(--line);
+  min-height: 50vh;
+}
+
+.sec-label {
+  border-right: 1px solid var(--line);
+  padding: 72px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 58px;
+  align-self: start;
+  height: fit-content;
+}
+
+.sec-num {
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+}
+
+.sec-name {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+}
+
+.sec-body {
+  padding: 72px 80px;
+}
+
+.sec-body > p {
+  max-width: 58ch;
+  line-height: 2.1;
+  color: #8a8a94;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+/* --- Cards --------------------------------------------------- */
+.card-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  padding: 42px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: default;
+  transition: padding-left 300ms ease;
+}
+
+.card:last-child {
+  border-bottom: none;
+}
+
+.card:hover {
+  padding-left: 20px;
+}
+
+.card h2 {
+  font-size: clamp(26px, 3.2vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  color: var(--text);
+  transition: color 220ms;
+}
+
+.card:hover h2 {
+  color: var(--accent);
+}
+
+.card p {
+  color: #8a8a94;
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.card p + p {
+  margin-top: 14px;
+}
+
+/* --- Footer -------------------------------------------------- */
+.foot.foot {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.foot .sec-label {
+  position: static;
+}
+
+.foot-body {
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.foot-email {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  transition: color 180ms;
+}
+
+.foot-email:hover {
+  color: var(--accent);
+}
+
+.foot-copy {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+}
+
+/* --- Reveal animation ---------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 700ms ease var(--delay, 0ms),
+    transform 700ms ease var(--delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive ---------------------------------------------- */
+@media (max-width: 860px) {
+  .topbar {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    padding: 0 20px;
+    height: 52px;
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+    border-right: none;
+  }
+
+  .menu {
+    margin-left: 0;
+    width: 100%;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .menu a {
+    padding: 0 16px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .hero {
+    align-items: center;
+  }
+
+  .hero-content {
+    padding: 0 24px 64px;
+  }
+
+  h1 {
+    font-size: clamp(46px, 14vw, 96px);
+  }
+
+  .section,
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .sec-label {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sec-body {
+    padding: 36px 24px;
+  }
+
+  .foot-body {
+    padding: 36px 24px;
+  }
+}
