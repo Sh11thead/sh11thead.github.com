@@ -403,3 +403,142 @@ h1 {
     padding: 36px 24px;
   }
 }
+
+/* ── Glitch effect ─────────────────────────────────────────────────────────── */
+#glitch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes glitch-flicker {
+  0% {
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+    background: rgba(255, 77, 0, 0.04);
+  }
+
+  12% {
+    opacity: 0;
+  }
+
+  14% {
+    opacity: 1;
+    background: rgba(0, 200, 255, 0.05);
+  }
+
+  18% {
+    opacity: 0;
+  }
+
+  22% {
+    opacity: 1;
+    background: rgba(255, 77, 0, 0.06);
+    box-shadow:
+      inset 0 30% 0 0 rgba(255, 77, 0, 0.06),
+      inset 0 60% 0 0 rgba(0, 200, 255, 0.04);
+  }
+
+  28% {
+    opacity: 0;
+  }
+
+  32% {
+    opacity: 1;
+    background: rgba(0, 200, 255, 0.03);
+  }
+
+  38% {
+    opacity: 0;
+  }
+
+  44% {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  52% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+    background: rgba(255, 77, 0, 0.03);
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#glitch-overlay.active {
+  animation: glitch-flicker 1.6s steps(1) forwards;
+}
+
+@keyframes glitch-content {
+  0% {
+    transform: translate(0);
+    filter: none;
+    clip-path: none;
+  }
+
+  10% {
+    transform: translate(-3px, 0);
+    filter: blur(0.4px);
+    clip-path: polygon(0 18%, 100% 18%, 100% 22%, 0 22%);
+  }
+
+  14% {
+    transform: translate(3px, 0);
+    filter: blur(0.4px);
+    clip-path: polygon(0 55%, 100% 55%, 100% 58%, 0 58%);
+  }
+
+  18% {
+    transform: translate(0);
+    filter: none;
+    clip-path: none;
+  }
+
+  24% {
+    transform: translate(2px, 0);
+    clip-path: polygon(0 70%, 100% 70%, 100% 74%, 0 74%);
+  }
+
+  28% {
+    transform: translate(-2px, 0);
+    clip-path: none;
+  }
+
+  32% {
+    transform: translate(0);
+    filter: none;
+  }
+
+  40% {
+    filter: drop-shadow(2px 0 0 rgba(255, 77, 0, 0.7)) drop-shadow(-2px 0 0 rgba(0, 200, 255, 0.7));
+  }
+
+  48% {
+    filter: none;
+  }
+
+  100% {
+    transform: translate(0);
+    filter: none;
+    clip-path: none;
+  }
+}
+
+#app.glitch {
+  animation: glitch-content 1.6s steps(1) forwards;
+}

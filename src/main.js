@@ -268,3 +268,31 @@ revealEls.forEach((el, i) => {
   observer.observe(el);
 });
 
+// ─── Glitch Effect ────────────────────────────────────────────────────────────
+(function initGlitch() {
+  const overlay = document.getElementById('glitch-overlay');
+  const appEl = document.getElementById('app');
+
+  function triggerGlitch() {
+    if (overlay) {
+      overlay.classList.remove('active');
+      void overlay.offsetWidth; // force reflow to restart animation
+      overlay.classList.add('active');
+      overlay.addEventListener('animationend', () => overlay.classList.remove('active'), { once: true });
+    }
+    if (appEl) {
+      appEl.classList.remove('glitch');
+      void appEl.offsetWidth;
+      appEl.classList.add('glitch');
+      appEl.addEventListener('animationend', () => appEl.classList.remove('glitch'), { once: true });
+    }
+    // Schedule next glitch: random 2-3 seconds
+    const delay = 2000 + Math.random() * 1000;
+    setTimeout(triggerGlitch, delay);
+  }
+
+  // Initial delay: 2-3 seconds after page load
+  const initialDelay = 2000 + Math.random() * 1000;
+  setTimeout(triggerGlitch, initialDelay);
+})();
+
